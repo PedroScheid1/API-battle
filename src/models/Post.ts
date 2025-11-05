@@ -24,15 +24,11 @@ export class Post {
     return parseInt(result.rows[0].count);
   }
 
-  // Buscar todos os posts com paginação
-  static async findAll(page: number = 1, limit: number = 10): Promise<IPost[]> {
-    const offset = (page - 1) * limit;
-
+  // Buscar todos os posts
+  static async findAll(): Promise<IPost[]> {
     const result = await pool.query(
       `SELECT * FROM comentarios
-       ORDER BY data_hora DESC
-       LIMIT $1 OFFSET $2`,
-      [limit, offset]
+       ORDER BY data_hora DESC`
     );
 
     return result.rows;

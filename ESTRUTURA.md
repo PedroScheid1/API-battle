@@ -102,7 +102,7 @@ Cliente → postRoutes → getPostsCount() → Post.count() → SELECT COUNT(*) 
 ### 3. GET /api/post (Listar)
 
 ```
-Cliente → postRoutes → getAllPosts() → Post.findAll() → SELECT * LIMIT/OFFSET → Banco
+Cliente → postRoutes → getAllPosts() → Post.findAll() → SELECT * → Banco
 ```
 
 ### 4. GET /api/post/:id (Buscar por ID)

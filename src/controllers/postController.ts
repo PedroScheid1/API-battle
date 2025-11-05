@@ -66,23 +66,13 @@ export const getAllPosts = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { page = 1, limit = 10 } = req.query;
-
-    const pageNum = parseInt(page as string);
-    const limitNum = parseInt(limit as string);
-
-    const posts = await Post.findAll(pageNum, limitNum);
+    const posts = await Post.findAll();
     const total = await Post.count();
 
     res.status(200).json({
       success: true,
       data: posts,
-      pagination: {
-        page: pageNum,
-        limit: limitNum,
-        total,
-        pages: Math.ceil(total / limitNum),
-      },
+      total,
     });
   } catch (error: any) {
     res.status(500).json({

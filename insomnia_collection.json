@@ -65,21 +65,10 @@
       "created": 1699142400000,
       "url": "{{ _.baseUrl }}/post",
       "name": "3. Consultar Todos os Posts",
-      "description": "Lista todos os posts com paginação",
+      "description": "Lista todos os posts",
       "method": "GET",
       "body": {},
-      "parameters": [
-        {
-          "name": "page",
-          "value": "1",
-          "description": "Número da página"
-        },
-        {
-          "name": "limit",
-          "value": "10",
-          "description": "Quantidade de itens por página"
-        }
-      ],
+      "parameters": [],
       "headers": [],
       "authentication": {},
       "metaSortKey": -1699142200000,
@@ -122,7 +111,7 @@
       "created": 1699142400000,
       "url": "{{ _.baseUrl }}/post/search/TypeScript",
       "name": "5. Buscar Posts por Expressão",
-      "description": "Busca posts que contenham a expressão no comentário",
+      "description": "Busca posts que contenham a expressão no comentário (com paginação)",
       "method": "GET",
       "body": {},
       "parameters": [

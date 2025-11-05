@@ -15,7 +15,7 @@ API REST para gerenciamento de posts de uma rede social, desenvolvida com TypeSc
 
 1. `POST /api/post` - Criar um post
 2. `GET /api/post/count` - Consultar quantidade de posts
-3. `GET /api/post` - Consultar todos os posts (com paginação)
+3. `GET /api/post` - Consultar todos os posts
 4. `GET /api/post/:id` - Consultar um post específico
 5. `GET /api/post/search/:exp` - Consultar posts por expressão nos comentários
 
@@ -175,13 +175,6 @@ http://localhost:3000/api
 
 **Endpoint:** `GET /api/post`
 
-**Query Parameters:**
-
-- `page` (opcional): Número da página (padrão: 1)
-- `limit` (opcional): Itens por página (padrão: 10)
-
-**Exemplo:** `GET /api/post?page=1&limit=20`
-
 **Resposta (200):**
 
 ```json
@@ -198,12 +191,7 @@ http://localhost:3000/api
       "updated_at": "2025-11-05T10:30:00.000Z"
     }
   ],
-  "pagination": {
-    "page": 1,
-    "limit": 20,
-    "total": 51001,
-    "pages": 2551
-  }
+  "total": 51001
 }
 ```
 
@@ -278,8 +266,8 @@ curl -X POST http://localhost:3000/api/post -H "Content-Type: application/json" 
 # Contar posts
 curl http://localhost:3000/api/post/count
 
-# Listar posts
-curl http://localhost:3000/api/post?page=1&limit=5
+# Listar todos os posts
+curl http://localhost:3000/api/post
 
 # Buscar post por ID
 curl http://localhost:3000/api/post/SEU_ID_AQUI

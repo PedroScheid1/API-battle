@@ -52,25 +52,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/api/post?page=1&limit=10",
+          "raw": "http://localhost:3000/api/post",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["api", "post"],
-          "query": [
-            {
-              "key": "page",
-              "value": "1",
-              "description": "Número da página"
-            },
-            {
-              "key": "limit",
-              "value": "10",
-              "description": "Quantidade de itens por página"
-            }
-          ]
+          "path": ["api", "post"]
         },
-        "description": "Lista todos os posts com paginação"
+        "description": "Lista todos os posts"
       },
       "response": []
     },
@@ -128,7 +116,7 @@
             }
           ]
         },
-        "description": "Busca posts que contenham a expressão no comentário"
+        "description": "Busca posts que contenham a expressão no comentário (com paginação)"
       },
       "response": []
     },
