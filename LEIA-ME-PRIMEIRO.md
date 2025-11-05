@@ -210,7 +210,7 @@ sudo apt update
 sudo apt install -y nodejs npm postgresql
 
 # 2. Criar banco de dados
-sudo -u postgres psql -c "CREATE DATABASE api_battle_posts;"
+sudo -u postgres psql -c "CREATE DATABASE api_db;"
 
 # 3. Transferir arquivos
 scp -r "API Battle" usuario@IP_VM:/home/usuario/

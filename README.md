@@ -74,7 +74,7 @@ NODE_ENV=development
 # PostgreSQL Database Configuration
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=api_battle_posts
+DB_NAME=api_db
 DB_USER=postgres
 DB_PASSWORD=sua_senha_aqui
 ```
@@ -86,7 +86,7 @@ DB_PASSWORD=sua_senha_aqui
 psql -U postgres
 
 # Crie o banco de dados
-CREATE DATABASE api_battle_posts;
+CREATE DATABASE api_db;
 
 # Saia do psql
 \q
@@ -322,11 +322,11 @@ sudo -u postgres psql
 
 # Dentro do psql:
 # Criar banco de dados
-CREATE DATABASE api_battle_posts;
+CREATE DATABASE api_db;
 
 # Criar usuário (opcional, ou usar o padrão postgres)
 CREATE USER seu_usuario WITH PASSWORD 'sua_senha';
-GRANT ALL PRIVILEGES ON DATABASE api_battle_posts TO seu_usuario;
+GRANT ALL PRIVILEGES ON DATABASE api_db TO seu_usuario;
 
 # Sair
 \q

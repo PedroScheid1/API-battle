@@ -36,13 +36,13 @@ const testConnection = async () => {
       console.log(`   - ${row.datname}`);
     });
 
-    // Verificar se o banco api_battle_posts existe
+    // Verificar se o banco api_db existe
     const dbCheck = await client.query(
-      "SELECT 1 FROM pg_database WHERE datname = 'api_battle_posts'"
+      "SELECT 1 FROM pg_database WHERE datname = 'api_db'"
     );
 
     if (dbCheck.rows.length > 0) {
-      console.log('\n✅ Banco "api_battle_posts" encontrado!');
+      console.log('\n✅ Banco "api_db" encontrado!');
 
       // Tentar conectar ao banco específico
       client.release();
@@ -50,11 +50,11 @@ const testConnection = async () => {
 
       const poolWithDb = new Pool({
         ...config,
-        database: "api_battle_posts",
+        database: "api_db",
       });
 
       const clientWithDb = await poolWithDb.connect();
-      console.log('✅ Conectado ao banco "api_battle_posts" com sucesso!\n');
+      console.log('✅ Conectado ao banco "api_db" com sucesso!\n');
 
       // Listar tabelas
       const tables = await clientWithDb.query(`
@@ -75,9 +75,9 @@ const testConnection = async () => {
       clientWithDb.release();
       await poolWithDb.end();
     } else {
-      console.log('\n❌ Banco "api_battle_posts" NÃO encontrado!');
+      console.log('\n❌ Banco "api_db" NÃO encontrado!');
       console.log("\n💡 Para criar o banco, execute no psql ou pgAdmin:");
-      console.log("   CREATE DATABASE api_battle_posts;");
+      console.log("   CREATE DATABASE api_db;");
     }
 
     client.release();

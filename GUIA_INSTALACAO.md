@@ -67,7 +67,7 @@ NODE_ENV=development
 # PostgreSQL Database Configuration
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=api_battle_posts
+DB_NAME=api_db
 DB_USER=postgres
 DB_PASSWORD=sua_senha_aqui  # A senha que você definiu na instalação
 ```
@@ -81,7 +81,7 @@ DB_PASSWORD=sua_senha_aqui  # A senha que você definiu na instalação
 psql -U postgres
 
 # Dentro do psql, criar o banco:
-CREATE DATABASE api_battle_posts;
+CREATE DATABASE api_db;
 
 # Sair
 \q
@@ -93,7 +93,7 @@ CREATE DATABASE api_battle_posts;
 2. Conecte-se ao servidor PostgreSQL
 3. Clique com o botão direito em "Databases"
 4. Selecione "Create" → "Database"
-5. Nome: `api_battle_posts`
+5. Nome: `api_db`
 6. Clique em "Save"
 
 ### Passo 5: Configurar as tabelas
@@ -109,7 +109,7 @@ Saída esperada:
 ```
 🔧 Iniciando configuração do banco de dados...
 ✅ PostgreSQL conectado com sucesso!
-📊 Database: api_battle_posts
+📊 Database: api_db
 📝 Executando script de criação de tabelas...
 ✅ Tabela "posts" criada com sucesso!
 ✅ Índices criados com sucesso!
@@ -132,7 +132,7 @@ Saída esperada:
 🌱 Iniciando seed do banco de dados...
 
 ✅ PostgreSQL conectado com sucesso!
-📊 Database: api_battle_posts
+📊 Database: api_db
 🏠 Host: localhost:5432
 
 🗑️  Limpando posts existentes...
@@ -243,16 +243,16 @@ curl http://localhost:3000/api/post/search/TypeScript
 2. Senha incorreta no `.env`
 
    - Verifique a senha do usuário postgres
-   - Teste a conexão: `psql -U postgres -d api_battle_posts`
+   - Teste a conexão: `psql -U postgres -d api_db`
 
 3. Banco de dados não existe
    - Execute: `npm run setup-db`
 
-### Erro: "database api_battle_posts does not exist"
+### Erro: "database api_db does not exist"
 
 ```bash
 # Criar o banco manualmente
-psql -U postgres -c "CREATE DATABASE api_battle_posts;"
+psql -U postgres -c "CREATE DATABASE api_db;"
 
 # Depois executar o setup
 npm run setup-db
@@ -291,7 +291,7 @@ npm run setup-db
 psql --version
 
 # Testar conexão
-psql -U postgres -d api_battle_posts
+psql -U postgres -d api_db
 
 # Listar tabelas (dentro do psql)
 \dt

@@ -32,7 +32,7 @@ MONGODB_URI=mongodb://localhost:27017/api-battle-posts
 ```env
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=api_battle_posts
+DB_NAME=api_db
 DB_USER=postgres
 DB_PASSWORD=postgres
 ```
@@ -130,7 +130,7 @@ mongosh
 show dbs
 
 # Usar database
-use api_battle_posts
+use api_db
 
 # Ver collections
 show collections
@@ -143,13 +143,13 @@ db.posts.countDocuments()
 
 ```bash
 # Conectar
-psql -U postgres -d api_battle_posts
+psql -U postgres -d api_db
 
 # Listar databases
 \l
 
 # Conectar a database
-\c api_battle_posts
+\c api_db
 
 # Listar tabelas
 \dt
@@ -185,7 +185,7 @@ npm install
 # Edite com suas credenciais PostgreSQL
 
 # 3. Criar banco de dados
-psql -U postgres -c "CREATE DATABASE api_battle_posts;"
+psql -U postgres -c "CREATE DATABASE api_db;"
 
 # 4. Configurar tabelas
 npm run setup-db
@@ -201,11 +201,11 @@ npm run dev
 
 ```bash
 # Método 1: Usando TRUNCATE (rápido)
-psql -U postgres -d api_battle_posts -c "TRUNCATE TABLE posts RESTART IDENTITY CASCADE;"
+psql -U postgres -d api_db -c "TRUNCATE TABLE posts RESTART IDENTITY CASCADE;"
 
 # Método 2: Recriar tudo
-psql -U postgres -c "DROP DATABASE api_battle_posts;"
-psql -U postgres -c "CREATE DATABASE api_battle_posts;"
+psql -U postgres -c "DROP DATABASE api_db;"
+psql -U postgres -c "CREATE DATABASE api_db;"
 npm run setup-db
 npm run seed
 ```

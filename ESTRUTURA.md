@@ -193,7 +193,7 @@ npm start            # Executar servidor compilado
 PORT=3000                      ← Porta do servidor
 DB_HOST=localhost              ← Host PostgreSQL
 DB_PORT=5432                   ← Porta PostgreSQL
-DB_NAME=api_battle_posts       ← Nome do banco
+DB_NAME=api_db       ← Nome do banco
 DB_USER=postgres               ← Usuário
 DB_PASSWORD=sua_senha          ← Senha
 ```
