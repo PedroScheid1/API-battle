@@ -1,0 +1,215 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-11-05T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_1",
+      "parentId": "fld_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.baseUrl }}/post",
+      "name": "1. Criar Post",
+      "description": "Cria um novo post na rede social",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"quem\": \"João Silva\",\n  \"comentario\": \"Meu primeiro post na rede social! 🚀\",\n  \"likes\": 0\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1699142400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2",
+      "parentId": "fld_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.baseUrl }}/post/count",
+      "name": "2. Consultar Quantidade de Posts",
+      "description": "Retorna o total de posts cadastrados",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699142300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3",
+      "parentId": "fld_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.baseUrl }}/post",
+      "name": "3. Consultar Todos os Posts",
+      "description": "Lista todos os posts com paginação",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Número da página"
+        },
+        {
+          "name": "limit",
+          "value": "10",
+          "description": "Quantidade de itens por página"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699142200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4",
+      "parentId": "fld_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.baseUrl }}/post/ID_DO_POST",
+      "name": "4. Consultar Post por ID",
+      "description": "Busca um post específico pelo ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699142100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5",
+      "parentId": "fld_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.baseUrl }}/post/search/TypeScript",
+      "name": "5. Buscar Posts por Expressão",
+      "description": "Busca posts que contenham a expressão no comentário",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Número da página"
+        },
+        {
+          "name": "limit",
+          "value": "10",
+          "description": "Quantidade de itens por página"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699142000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6",
+      "parentId": "fld_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "http://localhost:3000/",
+      "name": "Rota Raiz (Documentação)",
+      "description": "Retorna informações sobre a API",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_1",
+      "parentId": "wrk_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "API Battle - Posts",
+      "description": "Endpoints da API de Posts de Rede Social",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699142400000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_1",
+      "parentId": null,
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "API Battle",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_1",
+      "parentId": "wrk_1",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:3000/api"
+      },
+      "dataPropertyOrder": {
+        "&": ["baseUrl"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1699142400000,
+      "_type": "environment"
+    }
+  ]
+}

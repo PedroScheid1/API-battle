@@ -1,0 +1,159 @@
+{
+  "info": {
+    "name": "API Battle - Posts Rede Social",
+    "description": "Collection para testar todos os endpoints da API de Posts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Criar Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"quem\": \"João Silva\",\n  \"comentario\": \"Meu primeiro post na rede social! 🚀\",\n  \"likes\": 0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/post",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "post"]
+        },
+        "description": "Cria um novo post na rede social"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Consultar Quantidade de Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/post/count",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "post", "count"]
+        },
+        "description": "Retorna o total de posts cadastrados"
+      },
+      "response": []
+    },
+    {
+      "name": "3. Consultar Todos os Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/post?page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "post"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "description": "Número da página"
+            },
+            {
+              "key": "limit",
+              "value": "10",
+              "description": "Quantidade de itens por página"
+            }
+          ]
+        },
+        "description": "Lista todos os posts com paginação"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Consultar Post por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/post/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "post", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "ID do post (MongoDB ObjectId)"
+            }
+          ]
+        },
+        "description": "Busca um post específico pelo ID"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Buscar Posts por Expressão",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/post/search/:exp?page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "post", "search", ":exp"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "description": "Número da página"
+            },
+            {
+              "key": "limit",
+              "value": "10",
+              "description": "Quantidade de itens por página"
+            }
+          ],
+          "variable": [
+            {
+              "key": "exp",
+              "value": "TypeScript",
+              "description": "Expressão para buscar no comentário"
+            }
+          ]
+        },
+        "description": "Busca posts que contenham a expressão no comentário"
+      },
+      "response": []
+    },
+    {
+      "name": "Rota Raiz (Documentação)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        },
+        "description": "Retorna informações sobre a API"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    }
+  ]
+}
