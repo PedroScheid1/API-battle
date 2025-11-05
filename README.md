@@ -9,7 +9,7 @@ API REST para gerenciamento de posts de uma rede social, desenvolvida com TypeSc
 - **quem**: Nome do usuário que criou o post
 - **data_hora**: Data e hora da criação do post
 - **comentario**: Conteúdo do post
-- **likes**: Número de curtidas (campo extra)
+- **bitcoin**: Valor do post (campo extra)
 
 ### Endpoints Implementados
 
@@ -135,7 +135,7 @@ http://localhost:3000/api
 {
   "quem": "João Silva",
   "comentario": "Meu primeiro post na rede social!",
-  "likes": 0,
+  "bitcoin": 0,
   "data_hora": "2025-11-05T10:30:00.000Z"
 }
 ```
@@ -150,7 +150,7 @@ http://localhost:3000/api
     "id": 1,
     "quem": "João Silva",
     "comentario": "Meu primeiro post na rede social!",
-    "likes": 0,
+    "bitcoin": 0,
     "data_hora": "2025-11-05T10:30:00.000Z",
     "created_at": "2025-11-05T10:30:00.000Z",
     "updated_at": "2025-11-05T10:30:00.000Z"
@@ -192,7 +192,7 @@ http://localhost:3000/api
       "id": 42,
       "quem": "Maria Santos",
       "comentario": "Adorando esse novo projeto! 🚀",
-      "likes": 42,
+      "bitcoin": 42,
       "data_hora": "2025-11-05T10:30:00.000Z",
       "created_at": "2025-11-05T10:30:00.000Z",
       "updated_at": "2025-11-05T10:30:00.000Z"
@@ -222,7 +222,7 @@ http://localhost:3000/api
     "id": 123,
     "quem": "Pedro Oliveira",
     "comentario": "TypeScript é incrível!",
-    "likes": 128,
+    "bitcoin": 128,
     "data_hora": "2025-11-04T15:20:00.000Z",
     "created_at": "2025-11-04T15:20:00.000Z",
     "updated_at": "2025-11-04T15:20:00.000Z"
@@ -251,7 +251,7 @@ http://localhost:3000/api
       "id": 456,
       "quem": "Ana Costa",
       "comentario": "Alguém tem dicas de TypeScript?",
-      "likes": 15,
+      "bitcoin": 15,
       "data_hora": "2025-11-03T09:15:00.000Z",
       "created_at": "2025-11-03T09:15:00.000Z",
       "updated_at": "2025-11-03T09:15:00.000Z"
